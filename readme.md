@@ -1,25 +1,47 @@
 # HR Analytics Dashboard
 
-This simple app uses **Streamlit** to visualize HR data from a dataset of employees working in Data Science. The data was initially in CSV format, cleaned with **Pandas**, stored in a **SQLite** database, queried using **SQL**, and visualized with **Plotly**.
+An interactive data dashboard designed to simulate a simplified end-to-end data pipeline, from data ingestion to visualization, using modern Python tools.
 
-(Link to the dataset: [https://www.kaggle.com/datasets/arashnic/hr-analytics-job-change-of-data-scientists/data])
+This project demonstrates practical data engineering and analysis skills by processing an HR dataset focused on job changes in the Data Science field.
+Dataset: Kaggle - HR Analytics: Job Change of Data Scientists
 
+---
 
-## Project Goal
+## Project Objectives
 
-The goal of this project is to demonstrate practical skills in:
-- **Pandas** and data cleaning
-- Writing **SQL queries** for aggregations and insights
-- Building an interactive **Streamlit** dashboard
-- **Data visualization** using Plotly
-- (TBD) **Dockerizing** the application for deployment
+- Build a modular ETL pipeline with Python and SQL
+- Clean and structure raw CSV data using Pandas
+- Store transformed data in a SQLite relational database
+- Query with SQL for aggregation and business insights
+- Visualize trends interactively using Streamlit and Plotly
+- (Planned) Dockerize the app for deployment
+- (Planned) Connect to BigQuery or GCS for cloud simulation
+- (Planned) Add DAG simulation via Apache Airflow (local)
+
+---
 
 ## Tech Stack
 
-- Python
-- Pandas
-- SQLite
-- SQL
-- Streamlit
-- Plotly
-- (TBD) Docker
+| Layer            | Tools Used                          |
+|------------------|-------------------------------------|
+| Programming      | Python                              |
+| Data Handling    | Pandas, JSON                        |
+| Database         | SQLite (TBD BigQuery)       |
+| Query Language   | SQL (CTEs, aggregations, window fx) |
+| Orchestration    | (Planned) Airflow (Local DAG)     |
+| Visualization    | Streamlit, Plotly                   |
+| Deployment       | (Planned) Docker                  |
+| Cloud Simulation | (Planned) GCP Free Tier           |
+
+---
+
+## Workflow Overview
+
+```mermaid
+graph TD;
+A[Raw CSV Data] --> B[Pandas Cleaning];
+B --> C[SQLite Database];
+C --> D[SQL Queries];
+D --> E[Streamlit Dashboard];
+F[Optional GCP Upload] --> C;
+G[Optional Airflow DAG] --> B;
